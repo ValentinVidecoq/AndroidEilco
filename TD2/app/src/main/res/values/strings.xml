@@ -9,4 +9,11 @@
     <string name="cheese">Fromage</string>
     <string name="save">Enregistrer</string>
     <string name="cancel">Annuler</string>
+    <string name="tempTextView">°C</string>
+    <string name="windSpeedTextView">km/h</string>
+    <string-array name="weather">
+        <item>Clear</item>
+        <item>Overcast</item>
+        <item>Rainy</item>
+    </string-array>
 </resources>
