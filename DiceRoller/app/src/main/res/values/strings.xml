@@ -3,4 +3,9 @@
     <string name="roll_dice_button_text">Roll</string>
     <string name="imgDice1">Dice1</string>
     <string name="imgDice2">Dice2</string>
+    <string name="editTextDice1">Dice 1\nChoose from 1 to 6</string>
+    <string name="editTextDice2">Dice 2\nChoose from 1 to 6</string>
+    <string name="textViewResult">Result</string>
+    <string name="emptyValueDice1">Dice 1 input is empty, value set to 6</string>
+    <string name="emptyValueDice2">Dice 2 input is empty, value set to 6</string>
 </resources>

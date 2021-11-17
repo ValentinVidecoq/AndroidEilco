@@ -25,7 +25,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Result" />
+        android:text="@string/textViewResult" />
 
     <ImageView
         android:id="@+id/imageViewDice1"
@@ -48,5 +48,53 @@
         app:layout_constraintBottom_toTopOf="@+id/textViewResult"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/dice_1" />
+
+    <EditText
+        android:id="@+id/editTextDice1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewDice1"
+        android:inputType="number"
+        android:text="6"/>
+
+    <EditText
+        android:id="@+id/editTextDice2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewDice2"
+        android:inputType="number"
+        android:text="6"/>
+
+    <TextView
+        android:id="@+id/textViewEditDice1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDice1"
+        app:layout_constraintEnd_toEndOf="@+id/editTextDice1"
+        app:layout_constraintStart_toStartOf="@+id/editTextDice1"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        android:text="@string/editTextDice1"/>
+
+    <TextView
+        android:id="@+id/textViewEditDice2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDice2"
+        app:layout_constraintEnd_toEndOf="@+id/editTextDice2"
+        app:layout_constraintStart_toStartOf="@+id/editTextDice2"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        android:text="@string/editTextDice2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
