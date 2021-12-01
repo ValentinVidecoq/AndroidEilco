@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/val19/OneDrive/ING3/Dev_mobile/AndroidEilco/TD6/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/val19/OneDrive/ING3/Dev_mobile/AndroidEilco/TD6/app/src/main/res/layout/activity_search.xml" value="0.246875" />
+        <entry key="..\:/Users/val19/OneDrive/ING3/Dev_mobile/AndroidEilco/TD6/app/src/main/res/layout/content_search.xml" value="0.246875" />
+        <entry key="..\:/Users/val19/OneDrive/ING3/Dev_mobile/AndroidEilco/TD6/app/src/main/res/layout/search_item.xml" value="0.4722222222222222" />
+        <entry key="..\:/Users/val19/OneDrive/ING3/Dev_mobile/AndroidEilco/TD6/app/src/main/res/layout/search_repos.xml" value="0.3271794871794872" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
