@@ -19,7 +19,9 @@
             android:layout_alignParentBottom="true"
             android:layout_gravity="bottom"
             app:menu="@menu/item_menu"
-            app:backgroundTint="@color/purple_700"/>
+            app:backgroundTint="@color/purple_700"
+            app:itemTextColor="@drawable/tab_color"
+            app:itemIconTint="@drawable/tab_color"/>
 
     </RelativeLayout>
 

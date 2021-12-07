@@ -3,12 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_popular"
+        android:icon="@drawable/ic_baseline_trending_up_24"
         android:enabled="true"
         android:title="Popular"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_upcoming"
+        android:icon="@drawable/ic_upcoming_black_24dp"
         android:enabled="true"
         android:title="Upcoming"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:enabled="true"
+        android:title="Search"
         app:showAsAction="ifRoom" />
 </menu>
