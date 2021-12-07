@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NewsList</string>
+    <string name="loginButton">Login</string>
+    <string name="detailsButton">Details</string>
+    <string name="aboutButton">About</string>
+    <string name="logoutButton">Logout</string>
+    <string name="loginLabel">Username</string>
+    <string name="okButton">Ok</string>
+</resources>
