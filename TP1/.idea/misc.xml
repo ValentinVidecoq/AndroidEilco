@@ -5,6 +5,12 @@
       <map>
         <entry key="..\:/Users/val19/OneDrive/ING3/Dev_mobile/AndroidEilco/TP1/app/src/main/res/drawable/tab_color.xml" value="0.2635416666666667" />
         <entry key="..\:/Users/val19/OneDrive/ING3/Dev_mobile/AndroidEilco/TP1/app/src/main/res/layout/activity_main.xml" value="0.24739583333333334" />
+        <entry key="..\:/Users/val19/OneDrive/ING3/Dev_mobile/AndroidEilco/TP1/app/src/main/res/layout/fragment_popular.xml" value="0.246875" />
+        <entry key="..\:/Users/val19/OneDrive/ING3/Dev_mobile/AndroidEilco/TP1/app/src/main/res/layout/fragment_search.xml" value="0.246875" />
+        <entry key="..\:/Users/val19/OneDrive/ING3/Dev_mobile/AndroidEilco/TP1/app/src/main/res/layout/fragment_upcoming.xml" value="0.246875" />
+        <entry key="..\:/Users/val19/OneDrive/ING3/Dev_mobile/AndroidEilco/TP1/app/src/main/res/layout/popular_fragment.xml" value="0.246875" />
+        <entry key="..\:/Users/val19/OneDrive/ING3/Dev_mobile/AndroidEilco/TP1/app/src/main/res/layout/search_fragment.xml" value="0.246875" />
+        <entry key="..\:/Users/val19/OneDrive/ING3/Dev_mobile/AndroidEilco/TP1/app/src/main/res/layout/upcoming_fragment.xml" value="0.246875" />
         <entry key="..\:/Users/val19/OneDrive/ING3/Dev_mobile/AndroidEilco/TP1/app/src/main/res/menu/item_menu.xml" value="0.33" />
       </map>
     </option>

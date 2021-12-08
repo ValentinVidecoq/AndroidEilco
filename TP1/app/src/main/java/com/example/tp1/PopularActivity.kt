@@ -10,7 +10,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class PopularActivity: AppCompatActivity {
+/*class PopularActivity: AppCompatActivity {
 
     val apiService = Retrofit.Builder()
         .baseUrl(APIService.ENDPOINT)
@@ -31,4 +31,4 @@ class PopularActivity: AppCompatActivity {
 
         override fun onFailure(call: Call<RepoList?>, t: Throwable) {}
     })
-}
+}*/
