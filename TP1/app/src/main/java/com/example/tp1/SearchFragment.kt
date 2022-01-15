@@ -1,59 +1,78 @@
 package com.example.tp1
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SearchFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SearchFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var apiService: APIService = Retrofit.Builder()
+        .baseUrl(APIService.ENDPOINT)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+        .create(APIService::class.java)
+    private var movies: List<Movie> = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false)
-    }
+    ): View {
+        inflater.inflate(R.layout.fragment_search, container, false)
+        activity?.title = "Search"
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SearchFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SearchFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        // Inflate the view now so we can use setOnClickListener
+        val view: View = inflater.inflate(R.layout.fragment_search, container, false)
+
+        // Listen to the search button so we can trigger the search when it's clicked
+        view.findViewById<Button>(R.id.searchButton)?.setOnClickListener{
+            val searchText = view.findViewById<EditText>(R.id.searchEditText)?.text
+
+            // Don't trigger the search if the EditText is empty
+            if (searchText.toString() == "") {
+                return@setOnClickListener
             }
+
+            activity?.title = "Results for : " + searchText.toString()
+
+            // Call the service to get the search results
+            apiService.searchMovies("c65dcc82ce82ef76b1b8afb960b54a35", searchText.toString())?.enqueue(object :
+                Callback<MovieList?> {
+                override fun onResponse(call: Call<MovieList?>?, response: Response<MovieList?>) {
+
+                    // Set visibility of the EditText and Button to GONE in order to make room for the recycler view containing the results of the search
+                    view.findViewById<EditText>(R.id.searchEditText)?.visibility = View.GONE
+                    view.findViewById<Button>(R.id.searchButton)?.visibility = View.GONE
+
+                    // Store the api response as MovieList so we can use it
+                    movies = (response.body() as MovieList).results
+
+                    // Send data to the adapter so it can populate the recycler view
+                    val rvMovie : RecyclerView? = view.findViewById(R.id.rvMoviesSearch)
+                    val mAdapter = MovieAdapter(movies){
+                        val intent: Intent = Intent(activity, DetailsActivity::class.java)
+                        intent.putExtra("id", it.id)
+                        activity?.startActivity(intent)
+                    }
+                    rvMovie?.adapter = mAdapter
+                    rvMovie?.layoutManager = GridLayoutManager(container?.context, 2)
+                }
+
+                override fun onFailure(call: Call<MovieList?>?, t: Throwable?) {}
+            })
+        }
+
+        // Inflate the layout for this fragment
+        return view
     }
 }
