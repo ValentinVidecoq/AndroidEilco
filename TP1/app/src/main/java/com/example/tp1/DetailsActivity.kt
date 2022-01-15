@@ -68,7 +68,7 @@ class DetailsActivity: AppCompatActivity() {
                 if (movie.vote_count == 0) {
                     tvRating.text = "No rating\n"
                 } else{
-                    tvRating.text = "Rating : " + movie.vote_average + " (" + movie.vote_count + "votes)\n"
+                    tvRating.text = "Rating : " + movie.vote_average + " (" + movie.vote_count + " votes)\n"
                 }
             }
             override fun onFailure(call: Call<Movie?>?, t: Throwable?) {}

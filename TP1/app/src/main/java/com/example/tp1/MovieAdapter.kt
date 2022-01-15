@@ -36,10 +36,15 @@ class MovieAdapter(var mMovies: List<Movie>, private val listener: (Movie) -> Un
 
         val movie: Movie = mMovies[position]
 
-        // Display the poster and the title if there is no poster
+        // Display the poster and add the title if there is no poster
         if (movie.poster_path == null){
             Glide.with(holder.posterImageView).load(R.drawable.not_found).into(holder.posterImageView)
-            holder.noPosterTextView.text = movie.title
+            if (movie.title == null){
+                holder.noPosterTextView.text = movie.original_title
+            } else {
+                holder.noPosterTextView.text = movie.title
+            }
+
         }else{
             Glide.with(holder.posterImageView).load("https://image.tmdb.org/t/p/w500" + movie.poster_path).into(holder.posterImageView)
             holder.noPosterTextView.visibility = View.GONE

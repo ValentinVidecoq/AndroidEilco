@@ -14,4 +14,5 @@ class Movie {
     var vote_average: String? = null
     var tagline: String? = null
     var vote_count: Int? = null
+    var original_title: String? = null
 }
